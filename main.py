@@ -9,7 +9,7 @@ from decouple import config
 
 app = Flask("Plant Disease Detector")
 CORS(app)
-push_service = FCMNotification(api_key=config('API_KEY'))
+# push_service = FCMNotification(api_key=config('API_KEY'))
 
 @app.route('/', methods=['POST'])
 def predict():
