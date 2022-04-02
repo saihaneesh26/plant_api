@@ -29,33 +29,33 @@ def predict():
     return response
 
 
-@app.route('/notification', methods=['POST'])
-def send_notification():
-    print("Alert came")
-    try:
-        key_dict = request.get_json()
-        plant = key_dict['plant']
-        disease = key_dict['disease']
-        user = key_dict['user']
+# @app.route('/notification', methods=['POST'])
+# def send_notification():
+#     print("Alert came")
+#     try:
+#         key_dict = request.get_json()
+#         plant = key_dict['plant']
+#         disease = key_dict['disease']
+#         user = key_dict['user']
 
-        message = "Plant " + plant + " diagnosed with " + disease + " recently by " + user
-        print(message)
+#         message = "Plant " + plant + " diagnosed with " + disease + " recently by " + user
+#         print(message)
 
-        data_message = {
-            "title": "Susya Alerts",
-            "body": message,
-        }
+#         data_message = {
+#             "title": "Susya Alerts",
+#             "body": message,
+#         }
 
-        result = push_service.notify_topic_subscribers(
-            data_message=data_message, topic_name="susya")
+#         result = push_service.notify_topic_subscribers(
+#             data_message=data_message, topic_name="susya")
 
-        print(result)
-        # location = key_dict['location']
-        return "Success"
+#         print(result)
+#         # location = key_dict['location']
+#         return "Success"
 
-    except Exception as e:
-        print(e)
-        return "Failed"
+#     except Exception as e:
+#         print(e)
+#         return "Failed"
 
 
 if __name__ == '__main__':
