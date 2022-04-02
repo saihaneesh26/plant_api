@@ -1,8 +1,8 @@
 ml_api/
 .env
 
-src/
-!app/android/app/src
+# src/
+# !app/android/app/src
 
 # Miscellaneous
 app/*.class
